@@ -7,5 +7,9 @@
         "scripts": ["background.js"],
         "persistent": false
     },
-    "permissions": ["declarativeContnent"]
+    "permissions": ["declarativeContent", "tabs", "activeTab"],
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_title": "Word Meaning"
+    }
 }
