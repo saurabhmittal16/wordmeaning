@@ -1,0 +1,11 @@
+{
+    "name": "Word Meaning",
+    "version": "1.0",
+    "description": "Word Meaning",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": ["declarativeContnent"]
+}
