@@ -2,14 +2,15 @@
 <html>
 <head>
 <style>
-
+    #meaning {
+        display: none;
+    }
 </style>
 </head>
 <body>
-    <div class="word">
-        <label for="selectedWord">Selected Word</label>
-        <input type="text" name="selectedWord" id="wordToSearch">        
-    </div>
+    <input type="text" name="selectedWord" id="wordToSearch">
+    <p id='meaning'>Nothing</p>        
+
     <button id="submit">Click</button>
     <script src="popup.js"></script>
 </body>
