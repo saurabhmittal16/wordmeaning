@@ -1,6 +1,17 @@
 let button = document.querySelector('#submit'),
     word = document.querySelector('#wordToSearch'),
-    meaning = document.querySelector('#meaning');
+    meaning = document.querySelector('#meaning'),
+    wordToFind = "";
+    
+chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+    chrome.tabs.executeScript(
+        tabs[0].id,
+        {code: 'window.getSelection().toString();'},
+        selection => {
+            word.value = selection;
+        }
+    );
+});
 
 function meaningPromise(word) {
     let findMeaning = new Promise(
@@ -24,8 +35,6 @@ function meaningPromise(word) {
     return findMeaning;
 }
 
-let wordToFind = "";
-
 button.addEventListener('click', () => {
     meaning.style.display = 'block';
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
@@ -41,6 +50,8 @@ button.addEventListener('click', () => {
                     word.value = selection[0];
                     wordToFind = word.value;
                 }
+                meaning.innerHTML = "Searching...";
+                
                 meaningPromise(wordToFind)
                         .then(wordMeaning => {
                             if (wordMeaning.localeCompare("undefined") == 0){
