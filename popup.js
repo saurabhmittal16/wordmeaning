@@ -11,9 +11,8 @@ function meaningPromise(word) {
             request.open('GET', `http://api.pearson.com/v2/dictionaries/entries?headword=${word}`, true);
             request.onload = () => {
                 let content = JSON.parse(request.response);
-                if (request.status >= 200 && request.status < 400){
-                    resolve(content.results[0].senses[0].definition);
-                    console.log(content.results[0].senses[0].definition);
+                if (request.status >= 200 && request.status < 400 && content.total > 0){
+                    resolve(String(content.results[0].senses[0].definition));
                 } else {
                     reject("No such Word found");
                 }
@@ -44,7 +43,11 @@ button.addEventListener('click', () => {
                 }
                 meaningPromise(wordToFind)
                         .then(wordMeaning => {
-                            meaning.innerHTML = wordMeaning;
+                            if (wordMeaning.localeCompare("undefined") == 0){
+                                meaning.innerHTML = "No such word found";
+                            } else {
+                                meaning.innerHTML = wordMeaning;
+                            }
                         })
                         .catch(error => {
                             meaning.innerHTML = error;
