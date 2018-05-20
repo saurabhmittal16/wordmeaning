@@ -14,7 +14,7 @@ function meaningPromise(word) {
                 if (request.status >= 200 && request.status < 400 && content.total > 0){
                     resolve(String(content.results[0].senses[0].definition));
                 } else {
-                    reject("No such Word found");
+                    reject("No such word found");
                 }
             };
             request.send();
