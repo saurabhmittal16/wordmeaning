@@ -11,5 +11,11 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_title": "Word Meaning"
+    },
+    "icons": {
+        "16": "image.png",
+        "32": "image.png",
+        "48": "image.png",
+        "128": "image.png"
     }
 }

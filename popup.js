@@ -37,7 +37,7 @@ button.addEventListener('click', () => {
 
                 if (word.value.length > 0) {
                     wordToFind = word.value;
-                } else if (selection[0].length > 2){
+                } else if (selection[0].length > 0){
                     word.value = selection[0];
                     wordToFind = word.value;
                 }
