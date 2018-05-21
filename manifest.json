@@ -18,5 +18,14 @@
         "32": "image.png",
         "48": "image.png",
         "128": "image.png"
+    },
+    "commands": {
+        "_execute_page_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+E",
+                "windows": "Ctrl+Shift+E",
+                "mac": "Alt+Shift+E"
+            }
+        }
     }
 }

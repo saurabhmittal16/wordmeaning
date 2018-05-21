@@ -43,6 +43,14 @@ function meaningPromise(word) {
     return findMeaning;
 }
 
+document.addEventListener('keydown', key => {
+    let code = key.keyCode;
+    if(code == 13){
+        console.log("Enter key pressed");
+       button.click(); 
+    }
+});
+
 button.addEventListener('click', () => {
     meaning.style.display = 'block';
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
