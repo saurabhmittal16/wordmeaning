@@ -23,7 +23,15 @@ function meaningPromise(word) {
             request.onload = () => {
                 let content = JSON.parse(request.response);
                 if (request.status >= 200 && request.status < 400 && content.total > 0){
-                    resolve(String(content.results[0].senses[0].definition));
+                    for(let i=0; i<=10; i++){
+                        let temp = String(content.results[i].senses[0].definition); 
+                        if (temp.localeCompare("undefined") != 0){
+                            if (temp.length > 20){
+                                resolve(temp);
+                                break;
+                            }
+                        }
+                    }
                 } else {
                     reject("No such word found");
                 }
