@@ -1,4 +1,4 @@
 # Word Meaning Chrome Extension  
 A simple Chrome Extension that can be used to find the meaning of words highlighted or selected on the page.  
 The extension uses the [Pearson API](http://developer.pearson.com/apis/dictionaries).  
-Use Ctrl+Shift+E to launch the extension and Enter to submit.  
+Use Ctrl+Shift+E Alt+Z to launch the extension and Enter to submit for all platforms.  
