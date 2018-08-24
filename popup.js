@@ -78,6 +78,11 @@ button.addEventListener('click', () => {
                         })
                         .catch(error => {
                             meaning.innerHTML = error;
+                            let code = key.keyCode;
+                            if(code == 13) {
+                                console.log("Enter key pressed");
+                               button.click();
+                            }
                         });
             }
         );
