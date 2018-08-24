@@ -8,7 +8,10 @@ chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         tabs[0].id,
         {code: 'window.getSelection().toString();'},
         selection => {
-            word.value = selection;
+            if (selection)
+                word.value = selection;
+            else
+                word.value = "";
         }
     );
 });
